@@ -3,6 +3,7 @@ import re
 import requests
 import json
 import pandas as pd
+import random
 from bs4 import BeautifulSoup
 
 class WizardOfTasksConfig(datasets.BuilderConfig):
@@ -23,7 +24,9 @@ class WOT(datasets.GeneratorBasedBuilder):
     DEFAULT_WRITER_BATCH_SIZE = 256
     BUILDER_CONFIGS = [WizardOfTasksConfig(dataset_type="general", prev_utterances=0, description="General Dataset"),
                        WizardOfTasksConfig(dataset_type="qa", prev_utterances=0, description="Dataset used for QA, without previous utterances"),
-                       WizardOfTasksConfig(dataset_type="qa", prev_utterances=4, description="Dataset used for QA, with previous 4 utterances")]
+                       WizardOfTasksConfig(dataset_type="qa", prev_utterances=4, description="Dataset used for QA, with previous 4 utterances"),
+                       WizardOfTasksConfig(dataset_type="qa_simple", prev_utterances=0, description="Dataset used for QA, with generate ingredient questions")]
+
 
     def _info(self):
         description = f'Wizard of Tasks dataset for {self.config.dataset_type} purpose',
@@ -78,11 +81,11 @@ class WOT(datasets.GeneratorBasedBuilder):
         """Generate examples from a Crema unzipped directory."""
         id = 0
         with open(filepath) as f:
-            for conversation in f:
+            for i, conversation in enumerate(f):
+                
                 conv = json.loads(conversation)
                 
                 conversation_id = conv['conversation_id']
-                print(conversation_id)
                 
                 if 'wikihow' in conv['document_url']:
                     theme = 'diy'
@@ -92,39 +95,74 @@ class WOT(datasets.GeneratorBasedBuilder):
                 context = self.get_context(conv['document_url'])
                 if context == None:
                     continue
-                # print(conv['document_url'])
-                for i,turn in enumerate(conv['turns']):
-                    if self.config.dataset_type == 'general':
-                        
-                        yield id, {
-                            "conversation": conversation_id,
-                            "theme": theme,
-                            "text": turn['text'],
-                            "turn": turn['turn_counter'],
-                            "dangerous_tools": turn['dangerous_tools'],
-                            "shared_data": turn['shared_data'],
-                            "relevant": turn['relevant'],
-                            "useful": turn['useful'],
-                            "role": turn['role'],
-                            "intent": turn['intent'],
-                            "context_title": context['title'],
-                            "context_description": context['description'],
-                            "context_steps": context['steps']
-                        }
-                    else:    
-                        if turn['intent'] in ['ask_question_ingredients_tools', 'ask_question_recipe_steps'] and conv['turns'][i+1] != None and turn['text']!=None:
-                            history = []
-                            for j in range(max(0,i-self.config.prev_utterances)-1, i-1):
-                                history.append(conv['turns'][j]['text'])
-                            answer_turn = conv['turns'][i+1]
-                            inp = self.generate_input_qa(turn['text'], context, history)
-                            if len(inp.split(' ')) <=675:
+                
+                if self.config.dataset_type == 'qa_simple':
+                    if theme == 'cooking':
+                        for ingredient in context['ingredients']:
+                            ingre = ingredient.split(',')[0].split(' ')
+                            
+                            q = ''
+                            a = ''
+                            if len(ingre) == 2:
+                                
+                                r = random.randint(0, 2)
+                                if r == 0:
+                                    q = f'How many  {ingre[1]} should I get?'
+                                elif r == 1:
+                                    q = f'How many {ingre[1]} do I need?'
+                                else:
+                                    q = f'How many {ingre[1]} should I use?'
+                                a = ingre[0]
+                            
+                            elif len(ingre) > 1 and ingre[1] in ['(7.0-ounce)', '(8.0-ounce)','(14.0-ounce)','(15.0-ounce)', '(20.0-ounce)' ,'(12.0-ounce)', '(9-inch)', '(28.0-ounce)', 'piece', '(6-ounce)', 'whole', 'ounce', 'ounces', 'cloves', 'small', 'large', 'cup', 'cups', 'tablespoon', 'tablespoons', 'teaspoon', 'teaspoons', 'pound','pounds', 'gram','grams', 'g', 'gr', '(750.0-ml)', '(500.0-ml)', '(26.0-ounce)','(8.0-ounce)', '(6.0-ounce)', '(9.0-ounce)']:
+                                r = random.randint(0,1)
+                                if r == 0:
+                                    q = f'How much {" ".join(ingre[2:])}, do I need?'
+                                else:
+                                    q = f'How much {" ".join(ingre[2:])}, should I use?'
+                                a = ' '.join(ingre[:2])
+                                
+                            inp = self.generate_input_qa(q, context, '')
+                            if q != '' and a != '' and len(inp.split(' ')) <=675:
                                 yield id, {
                                     'input': inp,
-                                    'output': self.generate_output_qa(answer_turn['text'], answer_turn['shared_data']),
+                                    'output': a,
                                     'theme': theme
                                 } 
-                    id += 1
+                            id += 1 
+                else:   
+                    for i,turn in enumerate(conv['turns']):
+                        if self.config.dataset_type == 'general':
+                            
+                            yield id, {
+                                "conversation": conversation_id,
+                                "theme": theme,
+                                "text": turn['text'],
+                                "turn": turn['turn_counter'],
+                                "dangerous_tools": turn['dangerous_tools'],
+                                "shared_data": turn['shared_data'],
+                                "relevant": turn['relevant'],
+                                "useful": turn['useful'],
+                                "role": turn['role'],
+                                "intent": turn['intent'],
+                                "context_title": context['title'],
+                                "context_description": context['description'],
+                                "context_steps": context['steps']
+                            }
+                        else:    
+                            if turn['intent'] in ['ask_question_ingredients_tools', 'ask_question_recipe_steps'] and conv['turns'][i+1] != None and turn['text']!=None:
+                                history = []
+                                for j in range(max(0,i-self.config.prev_utterances)-1, i-1):
+                                    history.append(conv['turns'][j]['text'])
+                                answer_turn = conv['turns'][i+1]
+                                inp = self.generate_input_qa(turn['text'], context, history)
+                                if len(inp.split(' ')) <=675:
+                                    yield id, {
+                                        'input': inp,
+                                        'output': self.generate_output_qa(answer_turn['text'], answer_turn['shared_data']),
+                                        'theme': theme
+                                    } 
+                        id += 1
         
     def generate_input_qa(self, text, context, history):
         # question format: Text | Recipe | History
@@ -137,7 +175,7 @@ class WOT(datasets.GeneratorBasedBuilder):
                 role = 'student'
             else:
                 role = 'teacher'
-        context = f" | recipe title {context['title']} | recipe description {context['description']} | recipe steps {context['steps']} | history {history_combined}"
+        context = f" | recipe title: {context['title']} | recipe description: {context['description']} | recipe ingredients: {context['ingredients']} | recipe steps: {context['steps']} | history: {history_combined}"
         context = self.process_text(context)
         # print(f'Question: {question}')
         # print(f'Context: {context}')
@@ -201,6 +239,15 @@ class WOT(datasets.GeneratorBasedBuilder):
             recipe['title'] = soup.find(id='section_0').text
             recipe['description'] = soup.find(id='mf-section-0').text
             recipe['steps'] = self.get_steps(soup)
+            
+            requirements = []
+            tun_object = soup.find(id='thingsyoullneed')
+            if tun_object:
+                # Loop of ingredient objects to add full list.
+                for child in tun_object.find_all('li'):
+                    requirements.append(child.text.strip())
+            recipe['ingredients'] = requirements
+
 
         else:
             recipe = None
