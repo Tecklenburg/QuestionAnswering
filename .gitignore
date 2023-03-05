@@ -3,3 +3,5 @@ Notebooks/Models/
 Notebooks/log.txt
 Data/temp.csv
 logging
+
+.DS_Store
