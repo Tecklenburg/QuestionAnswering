@@ -2,5 +2,5 @@ project-env/
 Notebooks/log.txt
 Data/temp.csv
 logging
-
+Notebooks/Models
 .DS_Store
