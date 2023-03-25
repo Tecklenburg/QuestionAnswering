@@ -1,0 +1,8 @@
+{'rouge1': 36.973, 'rouge2': 28.5033, 'rougeL': 36.5195, 'rougeLsum': 36.4904, 'exact_match': 0.1138, 'gen_len': 10.7066}
+{'rouge1': 37.6942, 'rouge2': 28.5369, 'rougeL': 37.097, 'rougeLsum': 37.1393, 'exact_match': 0.1198, 'gen_len': 11.1497}
+{'rouge1': 38.7475, 'rouge2': 29.5699, 'rougeL': 38.579, 'rougeLsum': 38.3451, 'exact_match': 0.1317, 'gen_len': 10.8084}
+{'rouge1': 36.7318, 'rouge2': 26.8132, 'rougeL': 36.0763, 'rougeLsum': 36.0403, 'exact_match': 0.1198, 'gen_len': 10.0898}
+{'rouge1': 36.5327, 'rouge2': 27.595, 'rougeL': 36.0921, 'rougeLsum': 35.971, 'exact_match': 0.1078, 'gen_len': 11.5269}
+{'rouge1': 37.3023, 'rouge2': 28.6757, 'rougeL': 36.7212, 'rougeLsum': 36.7001, 'exact_match': 0.1257, 'gen_len': 11.2156}
+{'rouge1': 36.7851, 'rouge2': 27.9529, 'rougeL': 36.1068, 'rougeLsum': 36.1563, 'exact_match': 0.1198, 'gen_len': 11.1677}
+{'rouge1': 38.186, 'rouge2': 29.3764, 'rougeL': 37.7297, 'rougeLsum': 37.763, 'exact_match': 0.1377, 'gen_len': 10.1377}
