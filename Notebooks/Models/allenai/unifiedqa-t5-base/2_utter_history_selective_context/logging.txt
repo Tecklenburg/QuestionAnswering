@@ -1,0 +1,16 @@
+{'rouge1': 50.0934, 'rouge2': 43.1605, 'rougeL': 49.2726, 'rougeLsum': 49.1647, 'exact_match': 0.1916, 'gen_len': 11.994}
+{'rouge1': 46.6067, 'rouge2': 39.2035, 'rougeL': 45.7732, 'rougeLsum': 45.7916, 'exact_match': 0.1677, 'gen_len': 12.1257}
+{'rouge1': 48.4266, 'rouge2': 40.697, 'rougeL': 47.414, 'rougeLsum': 47.4961, 'exact_match': 0.1796, 'gen_len': 12.4311}
+{'rouge1': 47.0627, 'rouge2': 40.5599, 'rougeL': 46.4157, 'rougeLsum': 46.3684, 'exact_match': 0.1737, 'gen_len': 11.6587}
+{'rouge1': 48.0616, 'rouge2': 41.3012, 'rougeL': 47.357, 'rougeLsum': 47.335, 'exact_match': 0.1796, 'gen_len': 11.9521}
+{'rouge1': 49.9253, 'rouge2': 42.6646, 'rougeL': 48.9757, 'rougeLsum': 48.9818, 'exact_match': 0.1916, 'gen_len': 11.6228}
+{'rouge1': 49.5063, 'rouge2': 42.9361, 'rougeL': 48.5981, 'rougeLsum': 48.4746, 'exact_match': 0.2335, 'gen_len': 11.479}
+{'rouge1': 48.8603, 'rouge2': 41.6935, 'rougeL': 47.9318, 'rougeLsum': 47.8177, 'exact_match': 0.1976, 'gen_len': 11.6886}
+{'rouge1': 47.4641, 'rouge2': 40.4431, 'rougeL': 46.2746, 'rougeLsum': 46.3037, 'exact_match': 0.1856, 'gen_len': 11.8024}
+{'rouge1': 47.9927, 'rouge2': 40.9494, 'rougeL': 47.0077, 'rougeLsum': 46.9272, 'exact_match': 0.1976, 'gen_len': 11.5629}
+{'rouge1': 47.9647, 'rouge2': 41.0927, 'rougeL': 46.9441, 'rougeLsum': 46.8789, 'exact_match': 0.2036, 'gen_len': 11.6527}
+{'rouge1': 48.3529, 'rouge2': 41.3219, 'rougeL': 47.3719, 'rougeLsum': 47.298, 'exact_match': 0.1976, 'gen_len': 11.5629}
+{'rouge1': 48.0806, 'rouge2': 41.239, 'rougeL': 47.0493, 'rougeLsum': 47.0485, 'exact_match': 0.2036, 'gen_len': 11.8802}
+{'rouge1': 49.0265, 'rouge2': 42.2451, 'rougeL': 48.0915, 'rougeLsum': 48.0635, 'exact_match': 0.2036, 'gen_len': 12.2335}
+{'rouge1': 47.787, 'rouge2': 40.4179, 'rougeL': 46.5949, 'rougeLsum': 46.5794, 'exact_match': 0.1976, 'gen_len': 12.018}
+{'rouge1': 48.1368, 'rouge2': 41.1772, 'rougeL': 47.0793, 'rougeLsum': 47.054, 'exact_match': 0.1916, 'gen_len': 11.9102}

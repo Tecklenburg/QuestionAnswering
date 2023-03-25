@@ -1,0 +1,13 @@
+{'rouge1': 33.3674, 'rouge2': 23.3368, 'rougeL': 32.3113, 'rougeLsum': 32.3098, 'exact_match': 0.0838, 'gen_len': 11.8263}
+{'rouge1': 33.6044, 'rouge2': 24.3369, 'rougeL': 32.9591, 'rougeLsum': 32.8809, 'exact_match': 0.0719, 'gen_len': 11.7186}
+{'rouge1': 34.3373, 'rouge2': 24.7669, 'rougeL': 33.593, 'rougeLsum': 33.5467, 'exact_match': 0.0719, 'gen_len': 11.9222}
+{'rouge1': 34.4035, 'rouge2': 24.537, 'rougeL': 33.2502, 'rougeLsum': 33.0948, 'exact_match': 0.0958, 'gen_len': 11.8683}
+{'rouge1': 34.5327, 'rouge2': 25.1578, 'rougeL': 33.5074, 'rougeLsum': 33.5082, 'exact_match': 0.1018, 'gen_len': 10.9461}
+{'rouge1': 33.9462, 'rouge2': 25.0865, 'rougeL': 32.8964, 'rougeLsum': 33.0, 'exact_match': 0.0958, 'gen_len': 11.4551}
+{'rouge1': 34.5806, 'rouge2': 25.2314, 'rougeL': 33.4713, 'rougeLsum': 33.4243, 'exact_match': 0.1018, 'gen_len': 11.5389}
+{'rouge1': 36.7305, 'rouge2': 27.1003, 'rougeL': 35.6797, 'rougeLsum': 35.7055, 'exact_match': 0.1138, 'gen_len': 11.1078}
+{'rouge1': 34.2207, 'rouge2': 24.5927, 'rougeL': 33.0927, 'rougeLsum': 33.0287, 'exact_match': 0.0898, 'gen_len': 11.5389}
+{'rouge1': 33.6703, 'rouge2': 24.0138, 'rougeL': 32.5483, 'rougeLsum': 32.4035, 'exact_match': 0.0898, 'gen_len': 11.6707}
+{'rouge1': 34.9994, 'rouge2': 25.713, 'rougeL': 33.9368, 'rougeLsum': 33.8734, 'exact_match': 0.0898, 'gen_len': 11.9581}
+{'rouge1': 35.3395, 'rouge2': 25.902, 'rougeL': 34.4332, 'rougeLsum': 34.2168, 'exact_match': 0.0958, 'gen_len': 11.4132}
+{'rouge1': 35.0723, 'rouge2': 26.0321, 'rougeL': 34.2103, 'rougeLsum': 34.268, 'exact_match': 0.1018, 'gen_len': 11.5569}

@@ -1,0 +1,17 @@
+{'rouge1': 48.8754, 'rouge2': 41.9676, 'rougeL': 48.1176, 'rougeLsum': 48.3173, 'exact_match': 0.1916, 'gen_len': 11.5749}
+{'rouge1': 47.8357, 'rouge2': 41.303, 'rougeL': 46.9896, 'rougeLsum': 47.394, 'exact_match': 0.2216, 'gen_len': 10.8084}
+{'rouge1': 50.2122, 'rouge2': 44.1534, 'rougeL': 49.4728, 'rougeLsum': 49.6256, 'exact_match': 0.2216, 'gen_len': 11.3593}
+{'rouge1': 50.0503, 'rouge2': 43.62, 'rougeL': 49.3377, 'rougeLsum': 49.4071, 'exact_match': 0.2096, 'gen_len': 11.6647}
+{'rouge1': 50.3835, 'rouge2': 43.7387, 'rougeL': 49.3993, 'rougeLsum': 49.5653, 'exact_match': 0.2156, 'gen_len': 11.497}
+{'rouge1': 48.9623, 'rouge2': 42.653, 'rougeL': 48.1487, 'rougeLsum': 48.4071, 'exact_match': 0.2096, 'gen_len': 11.7485}
+{'rouge1': 49.5737, 'rouge2': 42.7744, 'rougeL': 48.5979, 'rougeLsum': 48.8396, 'exact_match': 0.2096, 'gen_len': 11.2814}
+{'rouge1': 50.6165, 'rouge2': 44.4269, 'rougeL': 49.6866, 'rougeLsum': 49.919, 'exact_match': 0.2395, 'gen_len': 10.9401}
+{'rouge1': 50.819, 'rouge2': 44.2772, 'rougeL': 49.6876, 'rougeLsum': 49.9971, 'exact_match': 0.2216, 'gen_len': 11.4012}
+{'rouge1': 48.8235, 'rouge2': 42.5255, 'rougeL': 48.0334, 'rougeLsum': 48.3024, 'exact_match': 0.2156, 'gen_len': 11.1198}
+{'rouge1': 49.6528, 'rouge2': 43.3014, 'rougeL': 48.7659, 'rougeLsum': 49.1154, 'exact_match': 0.2156, 'gen_len': 11.1737}
+{'rouge1': 49.1692, 'rouge2': 42.3926, 'rougeL': 48.2739, 'rougeLsum': 48.5836, 'exact_match': 0.2036, 'gen_len': 11.1317}
+{'rouge1': 50.2201, 'rouge2': 43.2257, 'rougeL': 49.2467, 'rougeLsum': 49.4678, 'exact_match': 0.2216, 'gen_len': 11.4132}
+{'rouge1': 49.1068, 'rouge2': 42.5914, 'rougeL': 48.1511, 'rougeLsum': 48.4043, 'exact_match': 0.2275, 'gen_len': 11.2695}
+{'rouge1': 49.0781, 'rouge2': 42.4814, 'rougeL': 48.1126, 'rougeLsum': 48.3597, 'exact_match': 0.2216, 'gen_len': 10.9701}
+{'rouge1': 49.2484, 'rouge2': 42.7491, 'rougeL': 48.3555, 'rougeLsum': 48.6574, 'exact_match': 0.2156, 'gen_len': 11.2695}
+{'rouge1': 47.2726, 'rouge2': 40.517, 'rougeL': 46.1989, 'rougeLsum': 46.3134, 'exact_match': 0.2036, 'gen_len': 11.3293}
