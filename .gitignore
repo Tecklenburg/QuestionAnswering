@@ -1,6 +1,6 @@
 project-env/
 Notebooks/log.txt
 Data/temp.csv
+/home/ubuntu/QuestionAnswering/keys.json
 logging
-Notebooks/Models
 .DS_Store
